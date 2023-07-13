@@ -31,11 +31,9 @@ class ViewController: UIViewController {
               
               guard let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {
                 // appropriate error handling
+                  print("Json not correct formate.")
                 return
               }
-              
-              
-//              let json = try JSONDecoder().decode([BeneficiaryModel].self, from: jsonData)
               for dic in json{
                   let model = BeneficiaryModel(fromDictionary: dic)
                   beneficiaries.append(model)
